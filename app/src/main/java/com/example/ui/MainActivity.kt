@@ -17,15 +17,12 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         button = findViewById(R.id.button)
-        button.setOnClickListener(listener)
-    }
-
-    val listener = View.OnClickListener { view ->
-        when (view.getId()) {
-            R.id.button -> {
+        button.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(view: View?) {
                 checkInfo()
             }
-        }
+        })
+
     }
 
     private fun checkInfo() {
